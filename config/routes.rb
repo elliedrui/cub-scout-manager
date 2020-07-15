@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/auth/google_oath2/callback', to: 'sessions#home'
+  get '/auth/google_oath2/callback', to: 'sessions#googlecreate'
   root 'sessions#home'
   get '/signup' => 'users#new'
   get '/login' => 'sessions#new'

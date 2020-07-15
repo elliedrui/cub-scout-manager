@@ -25,7 +25,7 @@ gem 'coffee-rails'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'omniauth-google-oauth2'
-gem 'dotenv-rails'
+gem 'dotenv-rails', groups: [:development, :test]
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
 
