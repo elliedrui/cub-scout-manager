@@ -1,8 +1,8 @@
 <h1>Login</h1>
-
+<div>
 <%= form_for @user, url: '/login' do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
 
 
   <%= f.label :password %>
@@ -10,3 +10,5 @@
   
   <%= f.submit "Log in" %>
 <% end %>
+
+</div>

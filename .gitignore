@@ -32,6 +32,8 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+# Ignore .env file containing secret api keys
+.env
 
 /public/packs
 /public/packs-test
