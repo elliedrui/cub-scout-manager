@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  get '/auth/google_oath2/callback', to: 'sessions#googlecreate'
   root 'sessions#home'
   get '/signup' => 'users#new'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
+  match '/auth/:provider/callback', to: 'sessions#googlecreate', via: %i[get post], as: 'google'
+  get '/auth/google_oath2/callback' => 'sessions#googlecreate'
+  
 
   resources :users
 
