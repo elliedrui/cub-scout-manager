@@ -8,3 +8,5 @@
 
 # User.create(first_name: '', last_name: '', email: '', uid: '', password: '' )
 
+User.create(first_name: 'money', last_name: 'maker', email: 'moneymakerwats@gmail.com', uid: '', password: '1234' )
+

@@ -10,12 +10,14 @@ class SessionsController < ApplicationController
 
   #login action
   def create
-    @user = User.find_by(email: params[:user][:email])
-    if @user && @user.authenticate(params[:user][:password])
+ 
+    @user = User.find_by(email: params[:email])
+    if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
-      redirect_to 'login'
+      @error = true
+      render :login
     end
   end
 
@@ -24,7 +26,8 @@ class SessionsController < ApplicationController
     
     @user = User.find_or_create_by(uid: auth['uid']) do |u|
       byebug
-      u.username = auth['info']['name']
+      u.first_name = auth['info']['first_name']
+      u.last_name = auth['info']['last_name']
       u.email = auth['info']['email']
       u.password = auth['uid']
     end
