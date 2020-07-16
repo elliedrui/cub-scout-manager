@@ -1,0 +1,2 @@
+class ScoutsController < ApplicationController
+end

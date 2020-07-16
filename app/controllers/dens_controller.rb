@@ -1,0 +1,2 @@
+class DensController < ApplicationController
+end

@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  leader_id: 1
+  scout_id: 1
+  meeting_time: MyString
+
+two:
+  leader_id: 1
+  scout_id: 1
+  meeting_time: MyString

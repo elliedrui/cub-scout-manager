@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :dens
+  resources :scouts
   root 'sessions#home'
   get '/signup' => 'users#new'
   get '/login' => 'sessions#new'
