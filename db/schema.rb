@@ -10,7 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_11_194106) do
+ActiveRecord::Schema.define(version: 2020_07_16_202908) do
+
+  create_table "dens", force: :cascade do |t|
+    t.integer "pack_id"
+    t.integer "scout_id"
+    t.integer "leader_id"
+    t.string "meeting_time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "leaders", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.boolean "is_user", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "packs", force: :cascade do |t|
+    t.integer "leader_id"
+    t.integer "scout_id"
+    t.integer "pack_num"
+    t.string "charter_org"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "scouts", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
