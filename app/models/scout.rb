@@ -1,3 +1,3 @@
 class Scout < ApplicationRecord
-  has_many :dens
+  has_many :leaders, through: :pack
 end

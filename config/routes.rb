@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :leaders
+  resources :packs
   resources :dens
   resources :scouts
   root 'sessions#home'
