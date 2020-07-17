@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CubScoutManager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Cub Scout Manager" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Cub Scout Manager" %>">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,7 +12,14 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+
+    <main role="main">
+      <%= content_for?(:content) ? yield(:content) : yield %>
+    </main>
   
   
  
@@ -19,8 +28,7 @@
     </nav>
   <footer class="info">
 
-  <p><%= link_to 'Log Out', logout_path, method: :delete %> | <%= link_to  "Home", '/' %>
-  </p>
+  
   </footer>
   
 </html>

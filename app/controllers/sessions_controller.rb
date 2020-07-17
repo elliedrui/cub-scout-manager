@@ -34,20 +34,20 @@ class SessionsController < ApplicationController
       @user.save
       session[:user_id] = @user.id  #actually log em in
 
-      redirect_to user_path(@user)
-      
+      redirect_to packs_path
+
     elsif !User.find_by(uid: auth['uid']) && User.find_by(email: auth['info']['email'])
       @user = User.find_by(email: auth['info']['email'])
       @user.uid = auth['uid']
       #could have comfirm passw but for now ill say if google trusts em so will i
       @user.save
       session[:user_id] = @user.id  
-      redirect_to user_path(@user)
+      redirect_to packs_path
     else 
       @user = User.find_by(uid: auth['uid'])
       session[:user_id] = @user.id  
       
-      redirect_to user_path(@user)
+      redirect_to packs_path  
     end
 
   end
