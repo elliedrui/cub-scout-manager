@@ -1,0 +1,40 @@
+<h1>Create a Pack</h1>
+
+<div>
+  <%= form_for @pack do |f| %>
+
+    <%= render partial: 'layouts/errors', locals: {object: @pack} %>
+
+      <br><br>
+
+      <%= f.label :pack_num %>
+      <%= f.text_field :pack_num %>
+<br><br>
+      <%= f.label :charter_org %>
+      <%= f.text_field :charter_org %>
+    <br><br>
+
+    <%= f.label :leader_id, "Select a leader" %>
+    <%= f.collection_select :leader_id, Leader.all, :id, :first_name, prompt: true %>
+  <br><br>
+
+      <% if !params[:leader_id] %>
+      <h4>Or add a new leader:</h4>
+
+      <%= f.fields_for :leader do |l|%>
+        <%= l.label :first_name %>
+        <%= l.text_field :first_name %>
+<br><br>
+        <%= l.label :last_name %>
+        <%= l.text_field :last_name %>
+    <% end %>
+  <% end %>
+
+   
+    <%= f.submit %>
+  <% end %>
+</div>
+
+
+
+

@@ -3,3 +3,4 @@ class Den < ApplicationRecord
   has_many :leaders, through: :pack
   has_many :scouts
 end
+

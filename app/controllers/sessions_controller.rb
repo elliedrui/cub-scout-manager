@@ -23,14 +23,33 @@ class SessionsController < ApplicationController
 
 
   def googlecreate
-    
-    @user = User.find_or_create_by(uid: auth['uid']) do |u|
-      byebug
-      u.first_name = auth['info']['first_name']
-      u.last_name = auth['info']['last_name']
-      u.email = auth['info']['email']
-      u.password = auth['uid']
+      # we trust the user at this point because google said yea this guy is the guy
+    if !User.find_by(uid: auth['uid']) && !User.find_by(email: auth['info']['email'])
+      @user = User.new
+      @user.first_name = auth['info']['first_name']
+      @user.last_name = auth['info']['last_name']
+      @user.email = auth['info']['email']
+      @user.uid = auth['uid']
+      @user.password = auth['uid']
+      @user.save
+      session[:user_id] = @user.id  #actually log em in
+
+      redirect_to user_path(@user)
+      
+    elsif !User.find_by(uid: auth['uid']) && User.find_by(email: auth['info']['email'])
+      @user = User.find_by(email: auth['info']['email'])
+      @user.uid = auth['uid']
+      #could have comfirm passw but for now ill say if google trusts em so will i
+      @user.save
+      session[:user_id] = @user.id  
+      redirect_to user_path(@user)
+    else 
+      @user = User.find_by(uid: auth['uid'])
+      session[:user_id] = @user.id  
+      
+      redirect_to user_path(@user)
     end
+
   end
 
 
