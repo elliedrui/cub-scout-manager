@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_17_003924) do
+ActiveRecord::Schema.define(version: 2020_07_16_202908) do
 
   create_table "dens", force: :cascade do |t|
-    t.integer "pack_id"
-    t.integer "scout_id"
-    t.integer "leader_id"
+    t.string "grade"
     t.string "meeting_time"
+    t.integer "pack_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -30,10 +29,8 @@ ActiveRecord::Schema.define(version: 2020_07_17_003924) do
   end
 
   create_table "packs", force: :cascade do |t|
-    t.integer "leader_id"
-    t.integer "scout_id"
-    t.integer "pack_num"
-    t.string "charter_org"
+    t.integer "pack_number"
+    t.string "charter_organization"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -41,6 +38,9 @@ ActiveRecord::Schema.define(version: 2020_07_17_003924) do
   create_table "scouts", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
+    t.string "grade"
+    t.integer "pack_id"
+    t.integer "den_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
