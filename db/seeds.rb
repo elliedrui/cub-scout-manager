@@ -13,11 +13,15 @@ User.create(first_name: 'frank', last_name: 'frizzle', email: 'frank@gmail.com',
 Leader.create(first_name: 'John', last_name: 'maker')
 Leader.create(first_name: 'Sue', last_name: 'maker')
 Leader.create(first_name: 'Larru', last_name: 'Urru')
+
+
+Pack.create(pack_number: 44, charter_organization: "The Church of the Place")
+
+Den.create(grade: '1st', meeting_time: "Tuesday at 6pm", pack_id: 1)
+Den.create(grade: '2nd', meeting_time: "Tuesday at 7pm", pack_id: 1)
+Den.create(grade: '3rd', meeting_time: "Wednesday at 6pm", pack_id: 1)
+
 Scout.create(first_name: 'Chip', last_name: 'maker', grade: '1st', pack_id: 1, den_id: 1)
 Scout.create(first_name: 'Salbo', last_name: 'maker', grade: '2st', pack_id: 1, den_id: 2)
 Scout.create(first_name: 'Fluey', last_name: 'Frakes', grade: '3st', pack_id: 1, den_id: 3)
 Scout.create(first_name: 'Bonzo', last_name: 'Frakes', grade: '3st', pack_id: 1, den_id: 3)
-Pack.create(pack_number: 44, charter_organization: "The Church of the Place")
-Den.create(grade: '1st', meeting_time: "Tuesday at 6pm", pack_id: 1)
-Den.create(grade: '2nd', meeting_time: "Tuesday at 7pm", pack_id: 1)
-Den.create(grade: '3rd', meeting_time: "Wednesday at 6pm", pack_id: 1)

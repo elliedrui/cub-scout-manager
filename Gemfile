@@ -9,6 +9,7 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
+gem 'bootstrap-sass'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -30,9 +31,11 @@ gem 'dotenv-rails', groups: [:development, :test]
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
 
+gem 'uglifier', '>= 1.3.0'
+gem 'jquery-rails'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-
+gem "autoprefixer-rails"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
