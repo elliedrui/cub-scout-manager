@@ -9,7 +9,7 @@
   <%= form_tag(login_path) do %>
    
     <%= text_field_tag :email, '', :class => "login", :placeholder => "Login with your email" %>
-    <%= text_field_tag :password, '', :class => "login", :placeholder => "Enter your password" %>
+    <%= password_field_tag :password, '', :class => "login", :placeholder => "Enter your password" %>
     
     <%= submit_tag "Login" %>
 

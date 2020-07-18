@@ -10,12 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_16_202908) do
+ActiveRecord::Schema.define(version: 2020_07_18_180936) do
 
   create_table "dens", force: :cascade do |t|
     t.string "grade"
     t.string "meeting_time"
-    t.integer "pack_id"
+    t.bigint "pack_id"
+    t.bigint "scout_id"
+    t.bigint "leader_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -24,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_07_16_202908) do
     t.string "first_name"
     t.string "last_name"
     t.boolean "is_user", default: false
+    t.bigint "den_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -35,12 +38,18 @@ ActiveRecord::Schema.define(version: 2020_07_16_202908) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "scoutleaders", id: false, force: :cascade do |t|
+    t.integer "leader_id"
+    t.integer "scout_id"
+    t.index ["leader_id"], name: "index_scoutleaders_on_leader_id"
+    t.index ["scout_id"], name: "index_scoutleaders_on_scout_id"
+  end
+
   create_table "scouts", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "grade"
-    t.integer "pack_id"
-    t.integer "den_id"
+    t.bigint "den_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
