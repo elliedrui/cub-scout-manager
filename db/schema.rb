@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_07_18_180936) do
 
   create_table "dens", force: :cascade do |t|
+    t.string "den_name"
     t.string "grade"
     t.string "meeting_time"
     t.bigint "pack_id"

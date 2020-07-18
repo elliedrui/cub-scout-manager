@@ -23,7 +23,7 @@ Scout.create(first_name: 'Salbo', last_name: 'maker', grade: '2st', den_id: 2)
 Scout.create(first_name: 'Fluey', last_name: 'Frakes', grade: '3st', den_id: 3)
 Scout.create(first_name: 'Bonzo', last_name: 'Frakes', grade: '3st', den_id: 3)
 
-Den.create(grade: '1st', meeting_time: "Tuesday at 6pm", pack_id: 1, leader_id: 1)
-Den.create(grade: '2nd', meeting_time: "Tuesday at 7pm", pack_id: 1, leader_id: 1)
-Den.create(grade: '3rd', meeting_time: "Wednesday at 6pm", pack_id: 1, leader_id: 1)
+Den.create(den_name: 'Tiger', grade: '1st', meeting_time: "Tuesday at 6pm", pack_id: 1, leader_id: 1)
+Den.create(den_name: 'Wolf', grade: '2nd', meeting_time: "Tuesday at 7pm", pack_id: 1, leader_id: 1)
+Den.create(den_name: 'Bear', grade: '3rd', meeting_time: "Wednesday at 6pm", pack_id: 1, leader_id: 1)
 
