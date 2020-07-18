@@ -18,7 +18,7 @@ class CreateScoutsAndLeaders < ActiveRecord::Migration[6.0]
       t.timestamps
     end
 
-      create_table :scoutleaders, id: false do |t|
+      create_table :leaders_scout, id: false do |t|
 
         t.belongs_to :leader
         t.belongs_to :scout

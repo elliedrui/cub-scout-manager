@@ -10,11 +10,21 @@
                     <%= yield %>
                 </p>
             </div>
+
+    
+   
             <div class="col-lg-6">
                 <p>
 
-                    <div class="caption">You can always count on a pack to be friendly and welcoming!</div>
-                    <img src="" alt="Cub Scouts">
+                    <div class="caption"><strong>You can always count on a pack to be friendly and welcoming!</strong>
+                    <% @packs.each do |pack| %>
+    
+                        <%= pack.pack_number %>
+                        <%= pack.charter_organization %>
+                        <%= pack.dens.each do |den|%>
+                            <%= den.name %>
+                        <% end %>
+                    <% end %>
                 </p>
 
             </div>

@@ -32,18 +32,18 @@ ActiveRecord::Schema.define(version: 2020_07_18_180936) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "leaders_scout", id: false, force: :cascade do |t|
+    t.integer "leader_id"
+    t.integer "scout_id"
+    t.index ["leader_id"], name: "index_leaders_scout_on_leader_id"
+    t.index ["scout_id"], name: "index_leaders_scout_on_scout_id"
+  end
+
   create_table "packs", force: :cascade do |t|
     t.integer "pack_number"
     t.string "charter_organization"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "scoutleaders", id: false, force: :cascade do |t|
-    t.integer "leader_id"
-    t.integer "scout_id"
-    t.index ["leader_id"], name: "index_scoutleaders_on_leader_id"
-    t.index ["scout_id"], name: "index_scoutleaders_on_scout_id"
   end
 
   create_table "scouts", force: :cascade do |t|
