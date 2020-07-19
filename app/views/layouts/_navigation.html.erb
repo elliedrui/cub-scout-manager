@@ -1,15 +1,20 @@
 <nav class="navbar navbar-dark navbar-static-top navbar-expand-md">
+<%authentication_required%>
     <div class="container">
         <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span>
-        </button> <%= link_to "Where does this go?", root_path, class: 'navbar-brand' %>
+        
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav mr-auto">
-            <li class='nav-item'><%= link_to 'Log Out', logout_path, method: :delete, class: 'nav-link' %></li>
-            <li class='nav-item'><%= link_to  "Home", '/', class: 'nav-link' %></li>  
-
-                </li>
+                <li class='nav-item'><%= link_to 'Log Out', logout_path, method: :delete, class: 'nav-link' %></li>
+                <li class='nav-item'><%= link_to  "Home", '/', class: 'nav-link' %></li></li>  
+                <li class='nav-item'><%= link_to  "Leaders", leaders_path, :class => "btn btn-primary btn-sm" %></li>
+                <li class='nav-item'><%= link_to  "Scouts", scouts_path, :class => "btn btn-primary btn-sm" %></li> 
+                <li class='nav-item'><%= link_to  "Packs", packs_path, :class => "btn btn-primary btn-sm" %></li>
+                <li class='nav-item'><%= link_to  "Dens", dens_path, :class => "btn btn-primary btn-sm"%></li>
             </ul>
         </div>
+        </button> <%= link_to "Where does this go?", root_path, class: 'navbar-brand' %>
     </div>
+    
 </nav>
 

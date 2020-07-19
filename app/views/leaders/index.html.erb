@@ -1,0 +1,4 @@
+<h2>Leaders:</h2>
+<% @leaders.each do |l|%>
+  <u><%=link_to l.full_name, l %></u> - Pack <u><%=link_to l.den.pack.pack_number,l.den.pack  %></u> - <u><%= link_to l.den.den_name, l.den %></u> Den<br><br>
+<%end%>

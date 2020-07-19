@@ -1,1 +1,8 @@
-<%= @den.name %>
+<%= @dens.each do |den| %>
+  ---------------------------------<br>
+  Name: <u><%=link_to den.den_name, den %></u><br><br>
+  Grade: <%= den.grade %><br><br>
+  Meeting Time: <%= den.meeting_time %><br><br>
+ 
+<% end %>
+---------------------------------<br>

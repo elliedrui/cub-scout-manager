@@ -1,0 +1,5 @@
+<div class="col-lg-6">
+  <% @scouts.each do |s|%>
+    Scout: <u><%= link_to s.full_name, s %></u><br>
+  <%end%>
+</div>

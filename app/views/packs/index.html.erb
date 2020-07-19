@@ -1,21 +1,18 @@
 
     
    
-            <div class="col-lg-6">
-                <p>
+<div class="col-lg-6">
+    <p>
 
-                    <div class="caption"><strong>You can always count on a pack to be friendly and welcoming!</strong></div>
-                    <% @packs.each do |pack| %>
-                        <br><br>
-                        
-                        <p><h2>Pack Number:</h2><u style="font-size:18px;"><%= link_to pack.pack_number, pack %></u><br><br></p>
-                        <h2>Charter Organization:</h2> 
-                        <p style="font-size:18px;"><%= pack.charter_organization %></p><br><br>
-                       
-                    <% end %>
-                </p>
-            </div>
+        <div class="caption"><strong>You can always count on a pack to be friendly and welcoming!</strong></div>
+        <% @packs.each do |pack| %>
+            <br><br>
             
-        </div>
-    </div>
+            <p><h2>Pack Number:</h2><u style="font-size:18px;"><%= link_to pack.pack_number, pack, :class => "btn btn-primary btn-sm"  %></u><br><br></p>
+            <h2>Charter Organization:</h2> 
+            <p style="font-size:18px;"><%= pack.charter_organization %></p><br><br>
+            
+        <% end %>
+    </p>
+</div>
 
