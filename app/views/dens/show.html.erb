@@ -1,0 +1,12 @@
+<h3><%=  link_to "Back to Pack", packs_path %> 
+
+<h2>Den Name: <%= @den.den_name %></h2> <br>
+<h2>Grade Level: <%= @den.grade %></h2><br>
+<h2>Meeting Time: <%= @den.meeting_time %></h2><br>
+<%= @den.scouts.each do |s| %>
+<br>
+<h2><% @den.den_name %> Scouts:</h2>
+  <ul>
+    <li><%= s.full_name%></li>
+  </ul>
+<% end %>
