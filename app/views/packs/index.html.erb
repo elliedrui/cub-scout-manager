@@ -1,40 +1,21 @@
-<% content_for :content do %>
-
-    <div class="jumbotron text-center">
-        <h1>Pack Info</h1>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <p>
-                    <%= yield %>
-                </p>
-            </div>
 
     
    
             <div class="col-lg-6">
                 <p>
 
-                    <div class="caption"><strong>You can always count on a pack to be friendly and welcoming!</strong>
+                    <div class="caption"><strong>You can always count on a pack to be friendly and welcoming!</strong></div>
                     <% @packs.each do |pack| %>
-    <br><br>
-                        <h2>Pack Number: <%= pack.pack_number %></h2><br>
-                        <h2>Charter Organization: <%= pack.charter_organization %></h2><br>
-                      <ul><%= pack.dens.each do |den|%></ul>
+                        <br><br>
+                        
+                        <p><h2>Pack Number:</h2><u style="font-size:18px;"><%= link_to pack.pack_number, pack %></u><br><br></p>
+                        <h2>Charter Organization:</h2> 
+                        <p style="font-size:18px;"><%= pack.charter_organization %></p><br><br>
                        
-                            <li><h3><%= link_to den.den_name, den_path(den) %> Den| Meeting Time: <%= den.meeting_time %> | Leader: <%= den.leaders.each do |leader| %></h3> 
-                                
-                                <%= leader.full_name %>
-                            <%end%>
-                             </li>
-                        <% end %>
                     <% end %>
                 </p>
-
             </div>
+            
         </div>
     </div>
 
-<% end %>
-<%= render template: "layouts/application" %>
