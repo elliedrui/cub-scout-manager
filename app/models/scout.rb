@@ -8,4 +8,8 @@ class Scout < ApplicationRecord
   def full_name 
     "#{first_name} #{last_name}"
   end
+
+  def is_grade(grade)
+    Scout.find_by(grade: grade)
+  end
 end

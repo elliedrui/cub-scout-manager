@@ -1,18 +1,21 @@
 
     
    
-<div class="col-lg-6">
-    <p>
+<div class="container">
 
-        <div class="caption"><strong>You can always count on a pack to be friendly and welcoming!</strong></div>
+    <div class="jumbotron-fluid">
+        <strong>You can always count on a pack to be friendly and welcoming!</strong>
         <% @packs.each do |pack| %>
             <br><br>
-            
-            <p><h2>Pack Number:</h2><u style="font-size:18px;"><%= link_to pack.pack_number, pack, :class => "btn btn-primary btn-sm"  %></u><br><br></p>
-            <h2>Charter Organization:</h2> 
-            <p style="font-size:18px;"><%= pack.charter_organization %></p><br><br>
-            
+            <big><big>Pack Number:</big></big>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to pack.pack_number, pack, :class => "btn btn-primary btn-sm"  %>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to  "Edit Pack", edit_pack_path(pack), :class => "btn btn-primary btn-sm" %>
+            <br><br>
+            <big><big>Charter Organization:</big></big>&nbsp;&nbsp;&nbsp;&nbsp;<big><%= pack.charter_organization %></big><br><br>
         <% end %>
-    </p>
+    </div>
+    <div class="jumbotron-fluid">
+        <p><%= link_to  "Create New Pack", new_pack_path, :class => "btn btn-primary btn-sm"  %></p>
+    </div>    
 </div>
+
+
 

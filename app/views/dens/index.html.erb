@@ -1,8 +1,17 @@
-<%= @dens.each do |den| %>
-  ---------------------------------<br>
-  Name: <u><%=link_to den.den_name, den %></u><br><br>
-  Grade: <%= den.grade %><br><br>
-  Meeting Time: <%= den.meeting_time %><br><br>
- 
-<% end %>
----------------------------------<br>
+<div class="container">
+
+  <div class="jumbotron-fluid">
+    <%= @dens.each do |den| %>
+      ---------------------------------<br>
+      Name: <u><%=link_to den.den_name, den, :class => "btn btn-primary btn-sm"  %></u>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to  "Edit Den", edit_den_path(den), :class => "btn btn-primary btn-sm" %><br><br>
+      Grade: <%= den.grade %><br><br>
+      Meeting Time: <%= den.meeting_time %><br><br>
+      <%= link_to  "Scouts", scouts_path(den.scouts) %><br><br>
+    
+    <% end %>
+    
+  </div>
+  <div class="jumbotron-fluid">
+        <p><%= link_to  "Create New Den", new_den_path, :class => "btn btn-primary btn-sm"  %></p>
+    </div> 
+</div>  

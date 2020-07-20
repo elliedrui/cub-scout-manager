@@ -1,0 +1,23 @@
+<h1>Edit a Pack</h1>
+
+<div>
+  <%= form_for @pack do |f| %>
+
+    <%= render partial: 'layouts/errors', locals: {object: @pack} %>
+
+      <br><br>
+
+      <%= f.label :pack_number %>
+      <%= f.text_field :pack_number %>
+      <br><br>
+      <%= f.label :charter_organization %>
+      <%= f.text_field :charter_organization %>
+      <br><br>
+
+  
+
+
+   
+    <%= f.submit %>
+  <% end %>
+</div>

@@ -1,7 +1,11 @@
 class ScoutsController < ApplicationController
   
     def index
-      @scouts = Scout.all
+      if params[:den_id]
+        @scouts = Den.find(params[:den_id]).scouts
+      else
+        @scouts = Scout.all
+      end
     end
   
     def show

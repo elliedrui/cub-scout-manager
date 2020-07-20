@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
   resources :leaders
-  resources :packs
-  resources :dens
+
+  resources :packs do
+    resources :dens, only: [:show, :index]
+  end
+  
+  resources :dens do
+    resources :scouts, only: [:show, :index]
+  end
+  
   resources :scouts
+  
   root 'sessions#home'
   get '/signup' => 'users#new'
   get '/login' => 'sessions#new'
