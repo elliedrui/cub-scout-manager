@@ -14,7 +14,11 @@ class DensController < ApplicationController
   end
 
   def new
-    @den = Den.new
+    if params[:pack_id]
+      @den = Den.new(pack_id: params[:pack_id])
+    else
+      @den = Den.new
+    end
   end
 
   def edit

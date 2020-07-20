@@ -3,11 +3,13 @@
   <div class="jumbotron-fluid">
     <%= @dens.each do |den| %>
      
-      <big><big>Name:</big></big> <u><%=link_to den.den_name, den, :class => "btn btn-primary btn-sm"  %></u>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to  "Edit Den", edit_den_path(den), :class => "btn btn-primary btn-sm" %><br><br>
+      <big><big>Name:</big></big> <u><%=link_to den.den_name, den, :class => "btn btn-primary btn-sm"  %></u><br><br>
       <big><big>Grade:</big></big> <%= den.grade %><br><br>
       <big><big>Meeting Time:</big></big> <%= den.meeting_time %><br><br>
       <%= link_to  "Scouts in this Den", scouts_path(den.scouts) %><br><br>
       <%= button_to "Delete Den", den_path(den), method: :delete, :class => "btn btn-primary btn-sm" %><br><br>
+        <h3><%=  link_to "Back to Pack", pack_path(den.pack) if den.pack %> 
+(<%= link_to "Edit Den", edit_pack_den_path(den.pack, den) if den.pack %>)</p>
     <% end %>
   </div>
   <div class="jumbotron-fluid">

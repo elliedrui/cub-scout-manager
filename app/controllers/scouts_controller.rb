@@ -14,7 +14,11 @@ class ScoutsController < ApplicationController
     end
   
     def new
-      @scout = Scout.new
+      if params[:den_id]
+        @scout = Scout.new(den_id: params[:scout_id])
+      else
+        @scout = Scout.new
+      end
     end
   
     def edit

@@ -1,6 +1,7 @@
 <div class="container">
   <div class="jumbotron-fluid">
-  <h3><%=  link_to "Back to Pack", pack_path %> 
+  <h3><%=  link_to "Back to Pack", pack_path(@den.pack) if @den.pack %> 
+(<%= link_to "Edit Den", edit_pack_den_path(@den.pack, @den) if @den.pack %>)</p>
 
   <h2>Den Name: <%= @den.den_name %></h2> <br><br>
   <h2>Grade Level: <%= @den.grade %></h2><br><br>
@@ -16,3 +17,4 @@
 
   </div>
 </div>
+

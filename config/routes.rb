@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   resources :leaders
 
   resources :packs do
-    resources :dens, only: [:show, :index]
+    resources :dens, only: [:show, :index, :new, :edit]
   end
   
   resources :dens do
-    resources :scouts, only: [:show, :index]
+    resources :scouts, only: [:show, :index,:new, :edit]
   end
   
   resources :scouts

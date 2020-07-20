@@ -7,6 +7,9 @@
     <%= f.label :den_name %>
     <%= f.text_field :den_name %>
     <br><br>
+    <% if local_assigns.has_key? :pack_id %>
+      <%= f.hidden_field :pack_id %>
+    <% end %>
     <%= f.label :grade %>
     <%= f.text_field :grade %>
     <br><br>
