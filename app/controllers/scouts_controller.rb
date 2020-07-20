@@ -1,4 +1,5 @@
 class ScoutsController < ApplicationController
+  before_action :authentication_required
   before_action :set_scout, only: [:show, :edit, :update, :destroy]
 
 
@@ -54,4 +55,6 @@ class ScoutsController < ApplicationController
       params.require(:scout).permit(:first_name, :last_name, :grade, :pack_id, :den_id)
     end
     
+    
+
 end

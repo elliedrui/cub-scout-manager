@@ -14,7 +14,8 @@
     <%= f.text_field :grade %>
     <br><br>
     <%= f.label :den_id %>
-    <%= f.text_field :den_id %>
+    <%= f.collection_select :den_id, Den.all, :id, :den_name, prompt: true %>
+    
     <br><br>  
 
   <%= f.submit %>

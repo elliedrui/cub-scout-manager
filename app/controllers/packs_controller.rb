@@ -1,4 +1,6 @@
 class PacksController < ApplicationController
+  before_action :authentication_required
+  skip_before_action :authentication_required, only: [:index]
   before_action :set_pack, only: [:show, :edit, :update, :destroy]
   
   def index
@@ -47,4 +49,5 @@ class PacksController < ApplicationController
     params.require(:pack).permit(:pack_number, :charter_organization)
   end
 
+  
 end

@@ -1,5 +1,6 @@
 class DensController < ApplicationController
-
+  before_action :authentication_required
+  skip_before_action :authentication_required, only: [:index]
   before_action :set_den, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -51,5 +52,6 @@ class DensController < ApplicationController
     params.require(:den).permit(:den_name, :grade, :meeting_time, :pack_id, :scout_id, :leader_id)
   end
   
-
+  
+  
 end
