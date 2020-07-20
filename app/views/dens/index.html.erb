@@ -1,5 +1,12 @@
 <div class="container">
-
+   <div class="jumbotron-fluid">
+<%= form_with url: '/search', method: :get, local: true do |f| %>
+  <%= f.label :den_name, "Search for:" %>
+  <%= f.text_field :den_name, id: :den_name %>
+  <%= f.submit "Search" %>
+<% end %>
+  <br><br>
+  </div>
   <div class="jumbotron-fluid">
     <%= @dens.each do |den| %>
      
@@ -15,4 +22,5 @@
   <div class="jumbotron-fluid">
     <p><%= link_to  "Create New Den", new_den_path, :class => "btn btn-primary btn-sm"  %></p>
   </div> 
+ 
 </div>  

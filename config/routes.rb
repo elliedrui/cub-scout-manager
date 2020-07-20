@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   root 'sessions#home'
   get '/signup' => 'users#new'
   get '/login' => 'sessions#new'
+  get '/search' => 'dens#search'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 

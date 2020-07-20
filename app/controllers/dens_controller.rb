@@ -14,6 +14,12 @@ class DensController < ApplicationController
   def show
   end
 
+  def search
+    @den = Den.find_by(den_name: params[:den_name])
+    redirect_to den_path(@den)
+  end
+
+
   def new
     if params[:pack_id]
       @den = Den.new(pack_id: params[:pack_id])

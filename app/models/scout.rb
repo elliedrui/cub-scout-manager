@@ -12,6 +12,6 @@ class Scout < ApplicationRecord
 
   scope :ready_for_BSA?, -> {where("grade = '5th'")}
   def ready_for_BSA?
-    self.grade = "5th"
+    self.grade == "5th"
   end
 end
