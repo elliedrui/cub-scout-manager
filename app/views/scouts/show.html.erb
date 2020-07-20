@@ -4,5 +4,6 @@
 <big><big><big>Grade Level:</big</big> </big> <big><%= @scout.grade %></big><br><br>
 <big><big><big>Den:</big></big></big> <big><%= @scout.den.den_name %></big><br><br>
 <big><big><big>Pack:</big></big></big> <big><%= @scout.den.pack.pack_number %></big><br><br>
+<big>Ready to promote to Boy Scouts?<%= @scout.ready_for_BSA? %>
 <br>
 <h4><%=  link_to "Back to Pack", pack_path, :class => "btn btn-primary btn-sm" %> | <%=  link_to "Back to Den", den_path(@scout.den.pack.id), :class => "btn btn-primary btn-sm" %></h4>

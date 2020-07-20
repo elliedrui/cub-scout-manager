@@ -1,16 +1,24 @@
-<h1>Login</h1>
+<div class="container">
+  <div class="jumbotron-fluid">
+    <h1>Login</h1>
 
-  <% if @error %>
+      <% if @error %>
 
-    <div>Your email or password was incorrect.</div>
+        <div>Your email or password was incorrect.</div>
 
-  <% end %>
+      <% end %>
 
-  <%= form_tag(login_path) do %>
-   
-    <%= text_field_tag :email, '', :class => "login", :placeholder => "Login with your email" %>
-    <%= password_field_tag :password, '', :class => "login", :placeholder => "Enter your password" %>
-    
-    <%= submit_tag "Login" %>
+      <%= form_tag(login_path) do %>
+      
+        <%= text_field_tag :email, '', :class => "login", :placeholder => "Login with your email" %>
+        <%= password_field_tag :password, '', :class => "login", :placeholder => "Enter your password" %>
+        
+        <%= submit_tag "Login" %>
+        <br><br>
+        OR
+    <br><br>
+        <%= link_to "Sign in Via Google", "/auth/google_oauth2" %> 
 
-  <% end %>
+      <% end %>
+  </div>
+</div>

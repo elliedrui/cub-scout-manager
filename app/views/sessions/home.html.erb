@@ -1,28 +1,27 @@
-<h1>Welcome to Cub Scout Manager!</h1>
+<div class="container">
+  <div class="jumbotron-fluid">
+    <h1>Welcome to Cub Scout Manager!</h1>
 
-<% if !logged_in? %>
+    <% if !logged_in? %>
 
-<%= link_to "Sign Up", signup_path %> |
+    <%= link_to "Sign Up", signup_path %> |
 
-<%= link_to "Login", login_path %> |
+    <%= link_to "Login", login_path %> |
 
-<%= link_to "Sign in Via Google", "/auth/google_oauth2" %> 
+    <%= link_to "Sign in Via Google", "/auth/google_oauth2" %> 
 
-<% else %>
+    <% else %>
 
-<h1>Management Dashboard</h1>
+    <h1>Management Dashboard</h1>
 
-<%= link_to  "Leaders", leaders_path, :class => "btn btn-primary btn-sm" %>
-<%= link_to  "Scouts", scouts_path, :class => "btn btn-primary btn-sm" %> 
-<%= link_to  "Packs", packs_path, :class => "btn btn-primary btn-sm" %>
-<%= link_to  "Dens", dens_path, :class => "btn btn-primary btn-sm"%>
-<% end %>
+    <%= link_to  "Leaders", leaders_path, :class => "btn btn-primary btn-sm" %>
+    <%= link_to  "Scouts", scouts_path, :class => "btn btn-primary btn-sm" %> 
+    <%= link_to  "Packs", packs_path, :class => "btn btn-primary btn-sm" %>
+    <%= link_to  "Dens", dens_path, :class => "btn btn-primary btn-sm"%>
+    <% end %>
 
-<%
-=begin%>
- if ther are no models say you have nothing to manage? 
-<%
-=end%>
+  </div>
+</div>
 
 
 

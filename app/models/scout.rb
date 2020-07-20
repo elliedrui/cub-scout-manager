@@ -10,7 +10,8 @@ class Scout < ApplicationRecord
     "#{first_name} #{last_name}"
   end
 
-  def is_grade(grade)
-    Scout.find_by(grade: grade)
+  scope :ready_for_BSA?, -> {where("grade = '5th'")}
+  def ready_for_BSA?
+    self.grade = "5th"
   end
 end
