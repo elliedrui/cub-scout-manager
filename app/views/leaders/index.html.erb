@@ -1,4 +1,16 @@
-<h2>Leaders:</h2>
-<% @leaders.each do |l|%>
-  <u><%=link_to l.full_name, l %></u> - Pack <u><%=link_to l.den.pack.pack_number,l.den.pack  %></u> - <u><%= link_to l.den.den_name, l.den %></u> Den<br><br>
-<%end%>
+<div class="container">
+  <div class="jumbotron-fluid">
+
+    <h2>Leaders:</h2>
+    <% @leaders.each do |l|%>
+      <u><%=link_to l.full_name, l, :class => "btn btn-primary btn-sm" %></u>
+      Pack <u><%=link_to l.den.pack.pack_number,l.den.pack, :class => "btn btn-primary btn-sm"  %></u>  
+      Den:<u><%= link_to l.den.den_name, l.den, :class => "btn btn-primary btn-sm" %></u><br><br>
+      <%= link_to  "Edit Leader", edit_leader_path(l), :class => "btn btn-primary btn-sm" %><br><br><%= button_to "Delete Leader", leader_path(l), method: :delete, :class => "btn btn-primary btn-sm" %><br><br>
+    <%end%>
+  </div>
+  
+    <div class="jumbotron-fluid">
+        <p><%= link_to  "Create New Leader", new_leader_path, :class => "btn btn-primary btn-sm"  %></p>
+    </div> 
+</div>

@@ -1,5 +1,5 @@
 class PacksController < ApplicationController
-
+  before_action :set_pack, only: [:show, :edit, :update, :destroy]
   
   def index
     @packs = Pack.all
@@ -7,7 +7,6 @@ class PacksController < ApplicationController
   end
 
   def show
-    @pack = Pack.find(params[:id])
   end
 
   def new
@@ -15,22 +14,34 @@ class PacksController < ApplicationController
   end
 
   def edit
-    @pack = Pack.find(params[:id])
   end
 
   def create
     @pack = Pack.new(pack_params)
-    @pack.save
-    redirect_to pack_path(@pack)
+
+    if @pack.save
+      flash[:message] = "Successfully created!"
+      redirect_to pack_path(@pack)
+    else
+      render :new
+    end
   end
 
   def update
-    @pack = Pack.find(params[:id])
     @pack.update(pack_params)
     redirect_to pack_path(@pack)
   end
 
+  def destroy
+    @pack.destroy
+    redirect_to packs_path
+  end
+
   private
+
+  def set_pack
+    @pack = Pack.find(params[:id])
+  end
 
   def pack_params
     params.require(:pack).permit(:pack_number, :charter_organization)

@@ -1,5 +1,13 @@
-<div class="col-lg-6">
-  <% @scouts.each do |s|%>
-    Scout: <u><%= link_to s.full_name, s %></u><br>
-  <%end%>
-</div>
+<div class="container">
+  <div class="jumbotron-fluid">
+    <% @scouts.each do |s|%>
+      Scout: <u><%= link_to s.full_name, s %></u><br>
+      Grade: <%= s.grade %><br><br>
+      <%= link_to  "Edit Scout", edit_scout_path(s), :class => "btn btn-primary btn-sm" %><br><br><%= button_to "Delete Scout", scout_path(s), method: :delete, :class => "btn btn-primary btn-sm" %><br><br>
+    <%end%>
+  </div>
+
+  <div class="jumbotron-fluid">
+        <p><%= link_to  "Create New Scout", new_scout_path, :class => "btn btn-primary btn-sm"  %></p>
+  </div> 
+</div> 

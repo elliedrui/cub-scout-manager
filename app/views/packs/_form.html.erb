@@ -1,0 +1,18 @@
+
+<div class="jumbotron-fluid">
+  <%= form_with model: pack, local: true do |f| %>
+
+    <%= render partial: 'layouts/errors', locals: {object: pack} %>
+
+      <br><br>
+
+      <%= f.label :pack_number %>
+      <%= f.text_field :pack_number %>
+      <br><br>
+      <%= f.label :charter_organization %>
+      <%= f.text_field :charter_organization %>
+      <br><br>
+
+    <%= f.submit %>
+  <% end %>
+</div>

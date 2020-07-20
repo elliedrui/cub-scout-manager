@@ -1,11 +1,16 @@
 class DensController < ApplicationController
 
+  before_action :set_den, only: [:show, :edit, :update, :destroy]
+
   def index
-    @dens = Den.all
+    if params[:pack_id]
+      @dens = Den.find(params[:pack_id]).dens
+    else
+      @dens = Den.all
+    end
   end
 
   def show
-    @den = Den.find(params[:id])
   end
 
   def new
@@ -13,7 +18,6 @@ class DensController < ApplicationController
   end
 
   def edit
-    @den = Den.find(params[:id])
   end
 
   def create
@@ -24,12 +28,20 @@ class DensController < ApplicationController
   end
 
   def update
-    @den = Den.find(params[:id])
     @den.update(den_params)
     redirect_to den_path(@den)
   end
 
+  def destroy
+    @den.destroy
+    redirect_to dens_path
+  end
+
   private
+
+  def set_den
+    @den = Den.find(params[:id])
+  end
 
   def den_params
     params.require(:den).permit(:den_name, :grade, :meeting_time, :pack_id, :scout_id, :leader_id)

@@ -1,5 +1,7 @@
 class ScoutsController < ApplicationController
-  
+  before_action :set_scout, only: [:show, :edit, :update, :destroy]
+
+
     def index
       if params[:den_id]
         @scouts = Den.find(params[:den_id]).scouts
@@ -9,7 +11,6 @@ class ScoutsController < ApplicationController
     end
   
     def show
-      @scout = Scout.find(params[:id])
     end
   
     def new
@@ -17,22 +18,33 @@ class ScoutsController < ApplicationController
     end
   
     def edit
-      @scout = Scout.find(params[:id])
     end
   
     def create
       @scout = Scout.new(scout_params)
-      @scout.save
-      redirect_to scout_path(@scout)
+      if @scout.save
+        flash[:message] = "Successfully created!"
+        redirect_to scout_path(@scout)
+      else 
+        render :new
+      end
     end
   
     def update
-      @scout = Scout.find(params[:id])
       @scout.update(scout_params)
       redirect_to scout_path(@scout)
     end
   
+    def destroy
+      @scout.destroy
+      redirect_to scouts_path
+    end
+
     private
+
+    def set_scout
+      @scout = Scout.find(params[:id])
+    end
   
     def scout_params
       params.require(:scout).permit(:first_name, :last_name, :grade, :pack_id, :den_id)

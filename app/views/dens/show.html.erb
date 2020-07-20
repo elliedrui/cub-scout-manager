@@ -6,13 +6,13 @@
   <h2>Grade Level: <%= @den.grade %></h2><br><br>
   <h2>Meeting Time: <%= @den.meeting_time %></h2><br><br>
   <h2>Scouts:</h2>
+ 
   <%= @den.scouts.each do |s| %>
-
-  
     <ul>
-      <li><u><%= link_to s.full_name, s%></u></li>
+      <li><u><%= link_to s.full_name, scout_path(s)%></u></li>
+     
     </ul>
-   
   <% end %>
+
   </div>
 </div>

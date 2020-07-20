@@ -1,15 +1,13 @@
-
-    
-   
 <div class="container">
 
     <div class="jumbotron-fluid">
         <strong>You can always count on a pack to be friendly and welcoming!</strong>
         <% @packs.each do |pack| %>
             <br><br>
-            <big><big>Pack Number:</big></big>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to pack.pack_number, pack, :class => "btn btn-primary btn-sm"  %>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to  "Edit Pack", edit_pack_path(pack), :class => "btn btn-primary btn-sm" %>
+            <big><big>Pack Number:</big></big>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to pack.pack_number, pack, :class => "btn btn-primary btn-sm" %>  
             <br><br>
             <big><big>Charter Organization:</big></big>&nbsp;&nbsp;&nbsp;&nbsp;<big><%= pack.charter_organization %></big><br><br>
+            <%= link_to  "Edit Pack", edit_pack_path(pack), :class => "btn btn-primary btn-sm" %><br><br><%= button_to "Delete Pack", pack_path(pack), method: :delete, :class => "btn btn-primary btn-sm" %><br><br>
         <% end %>
     </div>
     <div class="jumbotron-fluid">

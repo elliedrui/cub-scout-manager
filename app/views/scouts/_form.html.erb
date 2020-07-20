@@ -1,0 +1,21 @@
+
+<%= form_with model: scout, local: true do |f| %>
+  <%= render partial: 'layouts/errors', locals: {object: scout} %>
+
+    <br><br>
+
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+    <br><br>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+    <br><br>
+    <%= f.label :grade %>
+    <%= f.text_field :grade %>
+    <br><br>
+    <%= f.label :den_id %>
+    <%= f.text_field :den_id %>
+    <br><br>  
+
+  <%= f.submit %>
+<% end %>

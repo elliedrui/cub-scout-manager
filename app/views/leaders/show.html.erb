@@ -1,1 +1,7 @@
   
+<br><br>
+<big><big><big>Leader Name:</big></big> </big> <big><%= @leader.full_name %></big> <br><br>
+
+<big><big><big>Pack:</big></big></big> <big><%= @leader.den.pack.pack_number %></big><br><br>
+<br>
+<h4><%=  link_to "Back to Pack", pack_path, :class => "btn btn-primary btn-sm" %> | <%=  link_to "Back to Den", den_path(@leader.den.pack.id), :class => "btn btn-primary btn-sm" %></h4>

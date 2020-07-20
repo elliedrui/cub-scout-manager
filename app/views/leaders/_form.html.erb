@@ -1,0 +1,19 @@
+
+<%= form_with model: leader, local: true do |f| %>
+  <%= render partial: 'layouts/errors', locals: {object: leader} %>
+
+    <br><br>
+
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+    <br><br>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+    <br><br>
+   
+    <%= f.label :den_id %>
+    <%= f.text_field :den_id %>
+    <br><br>  
+
+  <%= f.submit %>
+<% end %>
