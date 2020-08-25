@@ -3,7 +3,7 @@
 
 <div style="display: inline-block">
   <h4>Dens: </h4>
-  <%= @pack.dens.each do |den| %>
+  <% @pack.dens.each do |den| %>
     <div style="display: inline-block"><ul><li><%= link_to den.den_name, den, :class => "btn btn-primary btn-sm"  %></li></ul></div>
   <%end%>
   <br>
@@ -13,14 +13,14 @@
 
 <div style="display: inline-block">
   <h4>Leaders: </h4>
-  <%= @pack.leaders.each do |l| %>
+  <% @pack.leaders.each do |l| %>
     <div style="display: inline-block"><ul><li><%= link_to l.full_name, l, :class => "btn btn-primary btn-sm"  %></li></ul></div>
   <%end%>
 </div>
 
 <div style="display: inline-block">
   <h4>Scouts: </h4>
-  <%= @pack.scouts.each do |s| %>
+  <% @pack.scouts.each do |s| %>
     <div style="display: inline-block"><ul><li><%= link_to s.full_name, s, :class => "btn btn-primary btn-sm"  %></li></ul></div>
   <%end%>
 </div>
