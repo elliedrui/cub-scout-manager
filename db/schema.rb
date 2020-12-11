@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_07_18_180936) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "dens", force: :cascade do |t|
     t.string "den_name"
     t.string "grade"
@@ -33,8 +36,8 @@ ActiveRecord::Schema.define(version: 2020_07_18_180936) do
   end
 
   create_table "leaders_scout", id: false, force: :cascade do |t|
-    t.integer "leader_id"
-    t.integer "scout_id"
+    t.bigint "leader_id"
+    t.bigint "scout_id"
     t.index ["leader_id"], name: "index_leaders_scout_on_leader_id"
     t.index ["scout_id"], name: "index_leaders_scout_on_scout_id"
   end

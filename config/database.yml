@@ -41,7 +41,7 @@ development:
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  username: postgres
+  username: <%= ENV['DB_USERNAME']  %>
 
   # The password associated with the postgres role (username).
   password: <%= ENV['CUB_MANAGER_DATABASE_PASSWORD']  %>
@@ -53,7 +53,7 @@ development:
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
-  port: 5432
+  # port: 5432
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: cubmanager,sharedapp,public
@@ -93,5 +93,5 @@ test:
 production:
   <<: *default
   database: cub-manager
-  username: postgres
+  username: <%= ENV['DB_USERNAME']  %>
   password: <%= ENV['CUB-MANAGER_DATABASE_PASSWORD'] %>
