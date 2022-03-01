@@ -29,7 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth-google-oauth2'
 gem 'dotenv-rails', groups: [:development, :test]
 # Use Active Storage variant
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
